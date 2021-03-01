@@ -1,0 +1,11 @@
+.article-creator-container{}
+
+h1{
+    margin-left: 40px;
+}
+
+.article-setup-container{
+    background-color: pink;
+    width: 900px;
+    height: auto;
+}

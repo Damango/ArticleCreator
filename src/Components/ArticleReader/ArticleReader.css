@@ -1,0 +1,16 @@
+.article-reader-container{}
+
+.article{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2f3640;
+    color: white;
+    width: 1000px;
+}
+
+.close-button{
+    position: absolute;
+    right: 100px;
+    top: 10px;
+}

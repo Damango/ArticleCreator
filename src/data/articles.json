@@ -1,8 +1,8 @@
 {
     "articles": [
         {
-            "article-title": "First Article",
-            "article-sections": [],
+            "articleTitle": "First Article",
+            "articleSections": [],
             "article-date": "",
             "aritcle-id": 1,
             "article-author": "Justin Kessler"
