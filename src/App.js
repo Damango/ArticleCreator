@@ -1,23 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import React, { useState } from 'react';
+import ArticleCreator from "./Components/ArticleCreator/ArticleCreator"
+import ArticleReader from "./Components/ArticleReader/ArticleReader"
 function App() {
+
+  const [appState, setAppState] = useState(0);
+
+
+  function changeAppView() {
+    if (appState === 1) {
+
+    }
+  }
+
+
+  function closeView() {
+    setAppState(0)
+  }
+
+  function renderNewState() {
+    if (appState === 1) {
+      return (<ArticleCreator closeView={closeView} />)
+    }
+    else if (appState === 2) { return (<ArticleReader closeView={closeView} />) }
+
+
+    else {
+      return (<div className="button-container">
+        <button className="landing-page-button create" onClick={() => { setAppState(1) }}>Create Article</button>
+        <button className="landing-page-button view" onClick={() => { setAppState(2) }}>View Article</button>
+      </div>)
+
+
+    }
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+
+      {renderNewState()}
+
+
     </div>
   );
 }
