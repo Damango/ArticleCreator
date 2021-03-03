@@ -8,10 +8,19 @@ const ArticleReader = (props) => {
         return (<div className="article-reader-container">
 
             <div className="close-button" onClick={props.closeView}>X</div>
-            <div>Article Reader</div>
 
             <div className="article">
-                {props.data.articleTitle}
+                <div className="article-title">{props.data.articleTitle}</div>
+                <div className="article-info-container">
+                    <div className="article-author">{props.data.articleAuthor}</div>
+                    <div className="article-date-published">{props.data.articleDate}</div>
+                </div>
+                <div className="article-sections-container">
+
+
+                    {props.data.articleSections.map((section) => <div className="article-section-view">{section.sectionText}</div>)}
+                </div>
+
             </div>
 
 
@@ -26,7 +35,7 @@ const ArticleReader = (props) => {
         return (<div className="article-reader-container">
 
             <div className="close-button" onClick={props.closeView}>X</div>
-            <div>Article Reader</div>
+
 
             <div className="article">
                 {articles.articles.map((article) => <div>{article.articleTitle}</div>)}

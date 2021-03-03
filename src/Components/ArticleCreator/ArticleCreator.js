@@ -5,38 +5,57 @@ import articles from "../../data/articles.json"
 const ArticleCreator = (props) => {
 
     const [article, setArticle] = useState()
+    const [update, setUpdate] = useState(1)
+
+    const [textSections, setTextSections] = useState([{
+        sectionText: '',
+        sectionID: 1
+    }]);
 
 
 
 
     function createArticle() {
 
-        let textareaText = document.querySelector('.text-section-input').value;
         let articleTitle = document.querySelector('.title-input').value;
-
-
 
         let newArticle = {
             articleTitle: articleTitle,
-            articleSections: [
-                { sectionText: textareaText }
-            ],
-            articleDate: "",
+            articleSections: textSections,
+            articleDate: "March 3rd, 2021",
             aritcleID: 1,
             articleAuthor: "Justin Kessler"
         }
 
         console.log(newArticle);
         setArticle(newArticle)
-
-
     }
 
 
     function articlePreview() {
         props.articlePreview(2)
         props.preview(article)
+    }
 
+    function addTextSection(text) {
+        let old = textSections;
+        console.log(old)
+        old.push({
+            sectionText: text,
+            sectionID: textSections.length + 1
+        });
+        let newSection = old;
+        setTextSections(newSection)
+        setUpdate(update + 1)
+    }
+
+    function changeTextSection(text, id) {
+
+
+        let sections = textSections;
+
+        sections[id - 1].sectionText = text
+        setTextSections(sections)
     }
 
 
@@ -56,7 +75,9 @@ const ArticleCreator = (props) => {
             </div>
 
             <div className="text-sections-wrapper">
-                <TextSection />
+
+                {textSections.map((section) => <TextSection changeText={changeTextSection} addSection={addTextSection} id={"text-section-" + section.sectionID} sectionID={section.sectionID} />)}
+
 
             </div>
 
