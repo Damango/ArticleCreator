@@ -1,11 +1,11 @@
 {
-    "articles": [
-        {
-            "articleTitle": "First Article",
-            "articleSections": [],
-            "article-date": "",
-            "aritcle-id": 1,
-            "article-author": "Justin Kessler"
-        }
-    ]
+  "articles": [
+    {
+      "articleTitle": "First Article",
+      "articleSections": [],
+      "articleDate": "",
+      "articleID": 1,
+      "articleAuthor": "Justin Kessler"
+    }
+  ]
 }
