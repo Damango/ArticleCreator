@@ -1,10 +1,58 @@
-.article-reader-container{}
+.article-reader-container{
+    position: relative;
+    overflow-x: hidden;
+}
 
 .article{
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #2f3640;
-    color: white;
-    width: 1000px;
+    
+    color: #2f3640;
+    width: 800px;
+    margin-top: 100px;
+  
+    
+}
+
+
+.article-info-container{
+    margin-top: 20px;
+}
+
+.article-title{
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 45px;
+    font-family: 'Titillium Web';
+}
+
+
+.article-author{
+    display: inline-block;
+    margin-right: 30px;
+    font-size: 20px;
+    font-family: 'Fira Sans';
+    font-weight: 500;
+    color: #0d50ee;
+}
+
+.article-date-published{
+    display: inline-block;
+    font-size: 20px;
+    font-family: 'Fira Sans';
+    font-weight: 500;
+
+}
+
+.article-sections-container{
+    font-size: 23px;
+    margin-top: 20px;
+     font-family: "Poppins";
+     font-weight: 400;
+}
+
+.article-section-view{
+    margin-top: 30px;
+   
 }
