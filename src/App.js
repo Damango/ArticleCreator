@@ -6,6 +6,7 @@ import ArticleReader from "./Components/ArticleReader/ArticleReader"
 function App() {
 
   const [appState, setAppState] = useState(0);
+  const [tempArticle, setTempArticle] = useState()
 
 
   function changeAppView() {
@@ -19,11 +20,16 @@ function App() {
     setAppState(0)
   }
 
+
+  function tempSetArticleState(article) {
+    setTempArticle(article)
+  }
+
   function renderNewState() {
     if (appState === 1) {
-      return (<ArticleCreator closeView={closeView} />)
+      return (<ArticleCreator closeView={closeView} articlePreview={setAppState} preview={tempSetArticleState} />)
     }
-    else if (appState === 2) { return (<ArticleReader closeView={closeView} />) }
+    else if (appState === 2) { return (<ArticleReader closeView={closeView} data={tempArticle} />) }
 
 
     else {

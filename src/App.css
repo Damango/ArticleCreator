@@ -4,6 +4,13 @@
   width: 100vw;
 }
 
+
+
+body{
+  margin: 0px !important;
+  padding: 0px;
+}
+
 .create {
   background-color: #cc2e2e;
   color: white;
@@ -33,14 +40,19 @@
   transform: translate(-50%, -50%);
 }
 
-.close-button {
+
+.close-button:hover {
+  cursor: pointer;
+}
+
+
+.close-button{
+  position: absolute;
+  top: 20px;
+  right: 50px;
   color: red;
   padding: 10px;
   font-size: 30px;
   font-family: Roboto;
   font-weight: bold;
-}
-
-.close-button:hover {
-  cursor: pointer;
 }
