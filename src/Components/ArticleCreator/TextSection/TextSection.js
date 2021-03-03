@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import "./TextSection.css"
 const TextSection = (props) => {
 
@@ -7,7 +7,16 @@ const TextSection = (props) => {
     let [charactersLength, setCharacetersLength] = useState(0)
 
 
+    const [autoFocus, setAutoFocus] = useState('true')
 
+    const textFocus = useRef(null)
+    useEffect(() => {
+
+        setTimeout(() => {
+            textFocus.current.focus()
+
+        }, 10)
+    }, [])
 
 
     function autoGrow() {
@@ -34,15 +43,16 @@ const TextSection = (props) => {
             let textareas = document.querySelector('.' + props.id);
             let theText = textareas.value;
             props.addSection(theText)
+
         }
     }
 
 
     return (<div className={"text-section-container"}>
 
-        <button className="attach-button">+</button>
+        <div className="attach-button">+</div>
 
-        <textarea onInput={autoGrow} onKeyDown={addTextSection} style={{ height: textareaHeight }} className={"text-section-input " + props.id} placeholder="Enter Story" />
+        <textarea ref={textFocus} onInput={autoGrow} onKeyDown={addTextSection} style={{ height: textareaHeight }} className={"text-section-input " + props.id} placeholder="Enter Story" autofocus={autoFocus} />
 
 
     </div>);
