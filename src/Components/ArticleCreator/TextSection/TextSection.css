@@ -1,0 +1,39 @@
+.text-section-container{
+
+}
+
+
+
+
+
+.text-section-input{
+    position: relative;
+    border-left: 3px solid #2f3640;
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+    padding: 10px;
+    outline: none;
+    width: 100%;
+
+    resize: none;
+
+    font-size: 30px;
+    resize: none;
+    overflow: hidden;
+}
+
+.attach-button{
+    position: absolute;
+    left: -50px;
+    background-color: #2ecc71;
+    color: white;
+    border-style: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-weight: bold;
+    font-size: 28px;
+    text-align: center;
+
+}
