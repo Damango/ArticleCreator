@@ -3,6 +3,8 @@ import articles from "../../data/articles.json"
 import "./ArticleReader.css"
 const ArticleReader = (props) => {
 
+    //Test
+
 
     if (props.data != null) {
         return (<div className="article-reader-container">
