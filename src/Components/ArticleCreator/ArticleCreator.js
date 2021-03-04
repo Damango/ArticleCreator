@@ -63,12 +63,14 @@ const ArticleCreator = (props) => {
 
     return (<div className="article-creator-container">
 
-        <button className="publish-button" onClick={createArticle}>Publish</button>
+
 
         <div className="close-button" onClick={props.closeView}>X</div>
 
 
         <div className="article-setup-container">
+            <button className="publish-button" onClick={createArticle}>Publish</button>
+            <button className="article-preview-button" onClick={articlePreview}>Preview Article</button>
             <div className="title-entry-container">
                 <div>Title</div>
                 <input className="title-input" placeholder='Enter Title' />
@@ -82,7 +84,7 @@ const ArticleCreator = (props) => {
             </div>
 
 
-            <button className="article-preview-button" onClick={articlePreview}>Preview Article</button>
+
         </div>
 
 
