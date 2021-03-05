@@ -7,8 +7,6 @@ const TextSection = (props) => {
     let [charactersLength, setCharacetersLength] = useState(0)
 
 
-    const [autoFocus, setAutoFocus] = useState('true')
-
     const textFocus = useRef(null)
     useEffect(() => {
 
@@ -42,19 +40,15 @@ const TextSection = (props) => {
         if (e.key === 'Enter') {
             let textareas = document.querySelector('.' + props.id);
             let theText = textareas.value;
-            props.addSection(theText)
-
+            props.addSection(theText, props.id)
+            console.log(theText.length)
         }
     }
 
 
     return (<div className={"text-section-container"}>
-
-        <div className="attach-button">+</div>
-
-        <textarea ref={textFocus} onInput={autoGrow} onKeyDown={addTextSection} style={{ height: textareaHeight }} className={"text-section-input " + props.id} placeholder="Enter Story" autofocus={autoFocus} />
-
-
+        <div className="attach-button"><span>+</span></div>
+        <textarea ref={textFocus} onInput={autoGrow} onKeyDown={addTextSection} style={{ height: textareaHeight }} className={"text-section-input " + props.id} placeholder="Enter Story" />
     </div>);
 }
 

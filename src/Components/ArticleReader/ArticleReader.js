@@ -20,7 +20,7 @@ const ArticleReader = (props) => {
                 <div className="article-sections-container">
 
 
-                    {props.data.articleSections.map((section) => <div className="article-section-view">{section.sectionText}</div>)}
+                    {props.data.articleSections.map((section) => <div className="article-section-view" key={section.sectionID}>{section.sectionText}</div>)}
                 </div>
 
             </div>

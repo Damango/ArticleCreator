@@ -37,13 +37,27 @@ const ArticleCreator = (props) => {
         props.preview(article)
     }
 
-    function addTextSection(text) {
+    function addTextSection(text, id) {
         let old = textSections;
         console.log(old)
+        let textareas = document.querySelector('.' + id);
+
+        setTimeout(() => { textareas.value = text }, 1)
+
+
+        /*  old.push({
+              sectionText: text,
+              sectionID: textSections.length + 1
+          });*/
+
         old.push({
-            sectionText: text,
+            sectionText: '',
             sectionID: textSections.length + 1
         });
+
+
+
+
         let newSection = old;
         setTextSections(newSection)
         setUpdate(update + 1)
@@ -78,7 +92,7 @@ const ArticleCreator = (props) => {
 
             <div className="text-sections-wrapper">
 
-                {textSections.map((section) => <TextSection changeText={changeTextSection} addSection={addTextSection} id={"text-section-" + section.sectionID} sectionID={section.sectionID} />)}
+                {textSections.map((section) => <TextSection changeText={changeTextSection} addSection={addTextSection} id={"text-section-" + section.sectionID} sectionID={section.sectionID} key={section.sectionID} />)}
 
 
             </div>
