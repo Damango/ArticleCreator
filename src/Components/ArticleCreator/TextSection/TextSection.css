@@ -13,7 +13,7 @@
     border-right: none;
     border-top: none;
     border-bottom: none;
-    padding: 10px;
+    padding: 10px 10px 0px 10px;
     outline: none;
     width: 100%;
 
@@ -50,4 +50,55 @@
     position: relative;
    top: -15%;
    
+}
+
+.insert-menu-container{
+    position: absolute;
+    background-color: white;
+    padding: 20px;
+    width: 170px;
+    height: 135px;
+    z-index: 2;
+    display: flex;
+    justify-content: space-evenly;
+   flex-direction: column;
+   box-shadow: 0px 0px 10px black;
+   border-radius: 5px;
+}
+
+.insert-selection{
+    background-color: #1abc9c;
+    border: 2px solid #2f3640;
+    color: white;
+    border-radius: 5px;
+    padding: 8px;
+    margin-bottom: 4px;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 4px;
+    transition: 0.3s;
+}
+
+.insert-selection:hover{
+    cursor: pointer;
+    background-color: white;
+    color: #1abc9c;
+}
+
+.image-browser-container{
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background-color: white;
+    left: 50%;
+    box-shadow: 0px 0px 10px black;
+
+}
+
+.image1{
+    background: url('../../../images/image1.jpg');
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
 }

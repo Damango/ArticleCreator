@@ -8,11 +8,15 @@
 
 .publish-button{
     background-color: #1abc9c;
+  
     color: white;
     font-family: Roboto;
-    border-style: none;
+    font-weight: bold;
     font-size: 20px;
-    padding: 8px 15px;
+    padding: 8px 17px;
+    border-style: none;
+    margin-top: 20px;
+    margin-right: 10px;
     transition: 0.3s;
 }
 
@@ -60,6 +64,7 @@
     background-color: #8e44ad;
     color: white;
     font-family: Roboto;
+    font-size: 20px;
     font-weight: bold;
     padding: 8px 17px;
     border-style: none;
