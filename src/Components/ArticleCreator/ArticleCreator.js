@@ -39,19 +39,22 @@ const ArticleCreator = (props) => {
 
     function addTextSection(text, id, image) {
         let old = textSections;
-        console.log(old)
+
         let textareas = document.querySelector('.' + id);
-
-
 
         if (image === true) {
 
-            old.push({
+            old[textSections.length - 1] = {
                 sectionText: text,
-                sectionID: textSections.length + 1,
+                sectionID: textSections.length,
                 image: true
-            });
+            }
 
+            old.push({
+                sectionText: '',
+                sectionID: textSections.length + 1,
+
+            });
         }
 
         else {
@@ -61,27 +64,16 @@ const ArticleCreator = (props) => {
             });
         }
 
-
         setTimeout(() => { textareas.value = text }, 1)
-
-
 
         let newSection = old;
         setTextSections(newSection)
         setUpdate(update + 1)
 
-
-
-
-
-
     }
 
     function changeTextSection(text, id) {
-
-
         let sections = textSections;
-
         sections[id - 1].sectionText = text
         setTextSections(sections)
     }

@@ -47,7 +47,7 @@ const TextSection = (props) => {
             let textareas = document.querySelector('.' + props.id);
             let theText = textareas.value;
             props.addSection(theText, props.id)
-            console.log(theText.length)
+
         }
     }
 
@@ -97,11 +97,9 @@ const TextSection = (props) => {
     }
 
     function insertImage(url) {
-
         setImageState(1)
         props.addSection(url, props.id, true)
         setImageSelect(url)
-
     }
     if (imageState === 1) {
         return (<div className="image-holder"><img src={imageSelect} /></div>)
