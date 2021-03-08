@@ -10,6 +10,7 @@
 .text-section-input{
     position: relative;
     border-left: 3px solid #2f3640;
+    border: 1px solid black;
     border-right: none;
     border-top: none;
     border-bottom: none;
@@ -150,3 +151,9 @@
     transform: translateX(-50%);
     max-height: 400px;
 }
+
+@media only screen and (max-width: 600px) {
+    .text-section-input{
+        font-size: 22px;
+    }
+  }

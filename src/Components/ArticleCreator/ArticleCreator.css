@@ -76,8 +76,23 @@
     cursor: pointer;
 }
 
+@media only screen and (max-width: 600px) {
+
+    .title-input{
+        font-size: 35px;
+    }
 
 
+}
+
+
+@media only screen and (max-width: 1000px) {
+
+    .article-setup-container{
+        width: 70%;
+    }
+
+}
 
 
 

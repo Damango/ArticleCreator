@@ -17,24 +17,30 @@ const ArticleCreator = (props) => {
 
     function createArticle() {
 
+        let theArticles = JSON.parse(localStorage.getItem('articles'));
+
         let articleTitle = document.querySelector('.title-input').value;
 
         let newArticle = {
             articleTitle: articleTitle,
             articleSections: textSections,
             articleDate: "March 3rd, 2021",
-            aritcleID: 1,
+            aritcleID: theArticles.length + 1,
             articleAuthor: "Justin Kessler"
         }
 
         console.log(newArticle);
         setArticle(newArticle)
+
+        theArticles.push(newArticle);
+        localStorage.setItem('articles', JSON.stringify(theArticles))
     }
 
 
     function articlePreview() {
-        props.articlePreview(2)
-        props.preview(article)
+        //props.articlePreview(2)
+        props.viewArticle(article.aritcleID)
+        //props.preview(article)
     }
 
     function addTextSection(text, id, image) {
