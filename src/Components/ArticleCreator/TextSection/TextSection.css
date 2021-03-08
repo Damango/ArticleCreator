@@ -92,13 +92,61 @@
     background-color: white;
     left: 50%;
     box-shadow: 0px 0px 10px black;
-
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
-.image1{
+.image-select:hover{
+    cursor: pointer;
+}
+
+.image1-select{
     background: url('../../../images/image1.jpg');
+    width: 180px;
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.image2-select{
+    background: url('../../../images/image2.jpg');
     width: 200px;
     height: 200px;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.image3-select{
+    background: url('../../../images/image3.jpg');
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.image4-select{
+    background: url('../../../images/image4.jpg');
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+.image-holder{
+    
+    width: 80%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.image-holder img{
+   
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    max-height: 400px;
 }

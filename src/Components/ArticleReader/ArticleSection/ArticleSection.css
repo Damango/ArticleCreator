@@ -1,0 +1,6 @@
+.reader-image{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    max-height: 400px;
+}

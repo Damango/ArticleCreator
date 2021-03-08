@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import image1 from "../../../images/image1.jpg"
+import image2 from "../../../images/image2.jpg"
+import image3 from "../../../images/image3.jpg"
+import image4 from "../../../images/image4.jpg"
 import "./TextSection.css"
 const TextSection = (props) => {
 
@@ -8,7 +11,8 @@ const TextSection = (props) => {
     let [charactersLength, setCharacetersLength] = useState(0)
     const [menuState, setMenuState] = useState(0);
     const [imageBrowser, setImageBrowser] = useState(0);
-    const [imageState, setImageState] = useState(0)
+    const [imageState, setImageState] = useState(0);
+    const [imageSelect, setImageSelect] = useState()
 
 
     const textFocus = useRef(null)
@@ -84,18 +88,23 @@ const TextSection = (props) => {
     function renderImageBrowser() {
         if (imageBrowser === 1) {
             return (<div className="image-browser-container">
-                <div className="image1" onClick={insertImage}></div>
+                <div className="image-select image1-select" onClick={() => { insertImage(image1) }}></div>
+                <div className="image-select image2-select" onClick={() => { insertImage(image2) }}></div>
+                <div className="image-select image3-select" onClick={() => { insertImage(image3) }}></div>
+                <div className="image-select image4-select" onClick={() => { insertImage(image4) }}></div>
             </div>)
         }
     }
 
-    function insertImage() {
+    function insertImage(url) {
 
         setImageState(1)
+        props.addSection(url, props.id, true)
+        setImageSelect(url)
 
     }
     if (imageState === 1) {
-        return (<div>IMAGE</div>)
+        return (<div className="image-holder"><img src={imageSelect} /></div>)
     }
 
 

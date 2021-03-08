@@ -23,6 +23,7 @@ function App() {
 
   function tempSetArticleState(article) {
     setTempArticle(article)
+    console.log(tempArticle)
   }
 
   function renderNewState() {

@@ -1,5 +1,6 @@
 import React from 'react';
 import articles from "../../data/articles.json"
+import ArticleSection from "./ArticleSection/ArticleSection"
 import "./ArticleReader.css"
 const ArticleReader = (props) => {
 
@@ -15,14 +16,11 @@ const ArticleReader = (props) => {
                     <div className="article-date-published">{props.data.articleDate}</div>
                 </div>
                 <div className="article-sections-container">
-                    {props.data.articleSections.map((section) => <div className="article-section-view" key={section.sectionID}>{section.sectionText}</div>)}
+                    {props.data.articleSections.map((section) => <ArticleSection className="article-section-view" key={section.sectionID} data={section} />)}
                 </div>
             </div>
         </div>)
     }
-
-
-
 
 
     else {
